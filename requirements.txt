@@ -1,0 +1,8 @@
+streamlit
+pdfplumber
+pillow
+pytesseract
+pandas
+openpyxl
+SQLAlchemy
+psycopg2-binary
