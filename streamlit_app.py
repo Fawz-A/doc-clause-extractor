@@ -132,7 +132,11 @@ def process_text_pages(text_pages):
 
             else:
                 if current_clause:
-                    current_text += " " + line
+                    
+                    if re.match(r"^[a-z]\.\s+", line):
+                        current_text += "\n" + line
+                    else:
+                        current_text += " " + line
 
     if current_clause:
         rows.append({
