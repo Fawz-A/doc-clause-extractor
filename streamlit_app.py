@@ -147,6 +147,22 @@ def process_text_pages(text_pages):
 
     return df
 
+# -----------------------------
+# Docx Inclusion
+# -----------------------------
+def extract_text_from_docx(docx_path):
+    from docx import Document
+
+    doc = Document(docx_path)
+    full_text = []
+
+    for paragraph in doc.paragraphs:
+        full_text.append(paragraph.text)
+
+    return ["\n".join(full_text)]
+
+
+
 
 # -----------------------------
 # STREAMLIT UI
@@ -165,8 +181,8 @@ tab1, tab2 = st.tabs(["Clause → Excel", "Document → Word"])
 with tab1:
 
     uploaded_file = st.file_uploader(
-        "Upload PDF or Image",
-        type=["pdf", "png", "jpg", "jpeg"],
+        "Upload PDF, Image, or Word File",
+        type=["pdf", "png", "jpg", "jpeg", "docx"],
         key="excel_upload"
     )
 
@@ -184,8 +200,13 @@ with tab1:
 
             if ext == ".pdf":
                 text_pages = extract_text_from_pdf(tmp_path)
+
             elif ext in [".png", ".jpg", ".jpeg"]:
                 text_pages = extract_text_from_image(tmp_path)
+
+            elif ext == ".docx":
+                text_pages = extract_text_from_docx(tmp_path)
+
             else:
                 st.error("Unsupported file type")
                 st.stop()
