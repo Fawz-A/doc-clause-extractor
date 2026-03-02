@@ -1,20 +1,24 @@
 # doc-clause-extractor
 
-OCR-powered PDF and image clause extraction tool that converts structured document clauses (e.g. 6.1.2) into formatted Excel output.
+---
+OCR- PDF and image clause extraction tool that converts structured document clauses (e.g. 6.1.2) into formatted Excel output.
+
+This script uses Reg-ex and Tesseract.
+Reg-ex for structuring the columns and to know when to linebreak.
+Tesseract used for OCR capabilities.
 
 ---
 
-## Features
 
-- 📄 PDF text extraction (pdfplumber)
-- 🖼 Image OCR support (Tesseract)
-- 🔢 Clause parsing (e.g. 6.1, 6.1.2, 3.2.4)
-- 📊 Structured Excel export
-- 📁 Multi-file upload (Streamlit UI)
-- 🧾 Wrapped text formatting
-- 🧊 Frozen headers + clean column sizing
+-  PDF text extraction (pdfplumber)
+-  Image OCR support (Tesseract)
+-  Clause parsing (e.g. 6.1, 6.1.2, 3.2.4)
+-  Structured Excel export
+-  Multi-file upload (Streamlit UI)
+-  Wrapped text formatting
+-  Frozen headers + clean column sizing
 
----
+
 
 ## Requirements
 
