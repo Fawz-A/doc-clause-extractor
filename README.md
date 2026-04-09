@@ -111,3 +111,6 @@ doc-clause-extractor/
 - Maximum recommended upload size: 20MB per file (for demo).
 - OCR accuracy depends on image quality.
 - Designed as a demo deployment; production hardening can be added later.
+
+
+Testing Code Rabbit
